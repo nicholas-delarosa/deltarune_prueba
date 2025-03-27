@@ -1,0 +1,447 @@
+@font-face {
+    font-family: "DELTARUNE";
+    src: url(../fonts/logo_font_dr.ttf);
+}
+
+@font-face {
+    font-family: "UT/DR Text";
+    src: url(../fonts/text_font_utdr.ttf);
+}
+
+body {
+    background-color: black;
+    font-family: "UT/DR Text";
+    font-size: 14px;
+    color: white;
+}
+
+/* Esto hace que la img.piano esté bien proporcionada y centrada en vista movil - Archivo: tracks.html */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.piano {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+/* Esto hace que la img del header quede centrada y bien proporcionada según el dispositivo que se use  */
+@media (min-width: 320px) and (max-width: 768px) {
+    body header img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+body header img {
+    max-width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+body section a {
+    text-decoration: none;
+    color: yellow;
+}
+
+ul.cap_lista {
+    list-style: disc;
+    color: yellow;
+}
+
+/* Esto ajusta img.dog para vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.dog {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+img.dog {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+
+body p {
+    text-align: justify;
+}
+
+/* Esto es para que el p.textdog no se muestre en móvil porque se pierde el chiste por el tamaño de la imagen */
+@media (min-width: 320px) and (max-width: 768px) {
+    p.textdog {
+        display: none;
+    }
+}
+
+p.textdog {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* Esto ajusta img.fun_gan para móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.fun_gang {
+        max-width: 90%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+img.fun_gang {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header.cap_logos {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+h1.titulos {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Esto hace que la img.beginning esté centrada y bien proporcionada en vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.name_caps {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+img.name_caps {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Esto ajusta la imagen del mundo oscuro para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.mundo_oscuro {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto hace que la imagen y el texto del mundo oscuro estén juntos en la vista desktop */
+@media (min-width: 1024px) {
+    div.img_mundo_oscuro {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta la imagen del field para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.field {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto hace que la imagen y el texto del field estén juntos en la vista desktop */
+@media (min-width: 1024px) {
+    div.img_field {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta la imagen del forest para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.forest {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto hace que la imagen y el texto del forest estén juntos en la vista desktop */
+@media (min-width: 1024px) {
+    div.img_forest {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+article ul a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Esto ajusta la imagen del castillo para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.castillo {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto hace que la imagen y el texto del castillo estén juntos en la vista desktop */
+@media (min-width: 1024px) {
+    div.img_castillo {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta la imagen de Jevil para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.jevil {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto hace que la imagen y el texto de Jevil estén juntos en la vista desktop */
+@media (min-width: 1024px) {
+    div.img_jevil {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta la imagen del pueblo para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.pueblo {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto hace que la imagen y el texto del pueblo estén juntos en la vista desktop */
+@media (min-width: 1024px) {
+    div.img_pueblo {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto hace que los logos de PC/MAC, Nintendo y PS4 queden bien ajustados y acomodados en la vista para móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    div.logos {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+    div.logos img {
+        max-width: 50%;
+        margin: 0 auto;
+        height: auto;
+    }
+    div.logos img.ps4_logo {
+        max-width: 100%;
+    }
+}
+
+/* Esto hace que los logos de PC/MAC, Nintendo y PS4 queden bien ajustados y acomodados en la vista desktop */
+@media (min-width: 1024px) {
+    div.logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    div.logos img.ps4_logo {
+        margin-left: 20px;
+    }
+}
+
+/* Esto ajusta la imagen de la ciudad para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.ciudad {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto ajusta la imagen y el texto de la ciudad para la vista desktop */
+@media (min-width: 1024px) {
+    div.img_ciudad {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta la imagen de la mansión de Queen para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.mansion {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto ajusta la imagen y el texto de la mansión de Queen para la vista desktop */
+@media (min-width: 1024px) {
+    div.img_mansion {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta la imagen del puzzle para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.puzzle {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto ajusta la imagen y el texto del puzzle para la vista desktop */
+@media (min-width: 1024px) {
+    div.img_puzzle {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta la imagen de Rouxls para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.rouxls {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto ajusta la imagen y el texto de Rouxls para la vista desktop */
+@media (min-width: 1024px) {
+    div.img_rouxls {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+/* Esto ajusta la imagen de Queen para la vista móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    img.queen {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+/* Esto ajusta la imagen y el texto de Queen para la vista desktop */
+@media (min-width: 1024px) {
+    div.img_queen {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Esto ajusta el video para la vista de móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    body video {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+body video {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+p.contacto {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+p.dont_forget {
+    font-weight: 800;
+}
+
+/**Los strong fueron utilizados para dar color a dos únicas palabra en diferentes partes del texto que llevaban diferentes colores**/
+strong.issue {
+    color: red;
+    font-weight: 400;
+}
+
+strong.resolve {
+    color: #00FF00;
+    font-weight: 400;
+}
+
+p.email {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2.titulos_tracks{
+    color: yellow;
+    text-align: center;
+}
+
+section audio {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    font-size: 8px;
+    text-align: center;
+    color: gray;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: gray;
+}
+
+/* Esto ajusta el footer para móvil */
+@media (min-width: 320px) and (max-width: 768px) {
+    footer {
+        font-size: 6px;
+    }
+}
