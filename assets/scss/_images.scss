@@ -1,0 +1,40 @@
+@use 'small-screens' as sc; /* sc = Small-Screens */
+
+.piano {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    @include sc.small-screens {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+body {
+    header {
+        img {
+            max-width: 100%;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            @include sc.small-screens {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+img.dog {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    @include sc.small-screens {
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
