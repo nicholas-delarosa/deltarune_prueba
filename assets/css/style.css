@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "DELTARUNE";
   src: url(../fonts/logo_font_dr.ttf);
@@ -6,8 +7,17 @@
   font-family: "UT/DR Text";
   src: url(../fonts/text_font_utdr.ttf);
 }
-/* sc = Small-Screens */
-/* sc = Small-Screens */
+body {
+  background-color: black;
+  font-family: "UT/DR Text";
+  font-size: 14px;
+  color: white;
+}
+
+/* sc = Screens */
+/* sc = Screens */
+/*Aunque se llame así, puede ser usado en vista desktop*/
+/*m = mixins*/
 .piano {
   display: flex;
   text-align: center;
@@ -23,6 +33,8 @@
 
 body header img {
   max-width: 100%;
+  height: auto;
+  margin: 0 auto;
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -31,6 +43,7 @@ body header img {
   body header img {
     max-width: 90%;
     margin: 0 auto;
+    height: auto;
   }
 }
 
@@ -40,20 +53,88 @@ img.dog {
   margin: 0 auto;
   max-width: 100%;
   height: auto;
+  margin: 0 auto;
+}
+
+img.fun_gang {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
 }
 @media (min-width: 320px) and (max-width: 768px) {
-  img.dog {
-    max-width: 100%;
+  img.fun_gang {
+    max-width: 90%;
     margin: 0 auto;
     height: auto;
   }
 }
 
-body {
-  background-color: black;
-  font-family: "UT/DR Text";
-  font-size: 14px;
-  color: white;
+img.name_caps {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  img.name_caps {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  img.mundo_oscuro, img.field, img.forest, img.castillo, img.jevil, img.pueblo, img.ciudad, img.mansion, img.puzzle, img.rouxls {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  div.img_mundo_oscuro, div.img_field, div.img_forest, div.img_castillo, div.img_jevil, div.img_pueblo, div.img_ciudad, div.img_mansion, div.img_puzzle, div.img_rouxls {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  div.logos {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1024px) {
+  div.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  div.logos img {
+    max-width: 50%;
+    margin: 0 auto;
+    height: auto;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  div.logos img.ps4_logo {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  div.logos img.ps4_logo {
+    margin-left: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

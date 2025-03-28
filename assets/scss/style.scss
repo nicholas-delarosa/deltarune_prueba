@@ -1,10 +1,4 @@
 @use 'fuentes';
-@use 'small-screens' as sc; /* sc = Small-Screens */
+@use 'body';
+@use 'screens' as sc; /* sc = Screens */
 @use 'images';
-
-body {
-    background-color: black;
-    font-family: "UT/DR Text";
-    font-size: 14px;
-    color: white;
-}

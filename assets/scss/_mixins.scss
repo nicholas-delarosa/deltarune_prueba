@@ -1,0 +1,31 @@
+@mixin center-flex {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*Aunque se llame así, puede ser usado en vista desktop*/
+@mixin center-mobile {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+@mixin center-block {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+@mixin special-imgs {
+    max-width: 90%;
+    margin: 0 auto;
+    height: auto;
+}
+
+@mixin imgs-p-caps {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+}
