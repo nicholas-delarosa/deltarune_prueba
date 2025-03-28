@@ -46,6 +46,32 @@ body header img {
     height: auto;
   }
 }
+body video {
+  /* Create View Timeline */
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
+  /* Attach animation, linked to the  View Timeline */
+  animation: linear reveal both;
+  animation-timeline: --revealing-image;
+  /* Tweak range when effect should run*/
+  animation-range: entry 25% cover 50%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(45% 20% 45% 20%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
 
 img.dog {
   text-align: center;
@@ -82,8 +108,28 @@ img.name_caps {
   }
 }
 
+img.mundo_oscuro, img.field, img.forest, img.castillo, img.jevil, img.pueblo, img.ciudad, img.mansion, img.puzzle, img.rouxls, img.queen {
+  /* Create View Timeline */
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
+  /* Attach animation, linked to the  View Timeline */
+  animation: linear reveal both;
+  animation-timeline: --revealing-image;
+  /* Tweak range when effect should run*/
+  animation-range: entry 25% cover 50%;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(45% 20% 45% 20%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
 @media (min-width: 320px) and (max-width: 768px) {
-  img.mundo_oscuro, img.field, img.forest, img.castillo, img.jevil, img.pueblo, img.ciudad, img.mansion, img.puzzle, img.rouxls {
+  img.mundo_oscuro, img.field, img.forest, img.castillo, img.jevil, img.pueblo, img.ciudad, img.mansion, img.puzzle, img.rouxls, img.queen {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
@@ -94,7 +140,7 @@ img.name_caps {
 }
 
 @media (min-width: 1024px) {
-  div.img_mundo_oscuro, div.img_field, div.img_forest, div.img_castillo, div.img_jevil, div.img_pueblo, div.img_ciudad, div.img_mansion, div.img_puzzle, div.img_rouxls {
+  div.img_mundo_oscuro, div.img_field, div.img_forest, div.img_castillo, div.img_jevil, div.img_pueblo, div.img_ciudad, div.img_mansion, div.img_puzzle, div.img_rouxls, div.img_queen {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -135,6 +181,86 @@ img.name_caps {
   div.logos img.ps4_logo {
     margin-left: 20px;
   }
+}
+
+body section audio {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+body section a {
+  text-decoration: none;
+  color: yellow;
+}
+body ul.cap_lista {
+  list-style: disc;
+  color: yellow;
+}
+body p {
+  text-align: justify;
+}
+body p.textdog {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 800;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  body p.textdog {
+    display: none;
+  }
+}
+body p.contacto {
+  font-size: 30px;
+  font-weight: 700;
+}
+body p.dont_forget {
+  font-weight: 800;
+}
+body p.email {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+body h1.titulos {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+body h2.titulos_tracks {
+  color: yellow;
+  text-align: center;
+}
+body article ul a {
+  text-decoration: none;
+  color: white;
+}
+body strong {
+  font-weight: 400;
+}
+body strong.issue {
+  color: red;
+}
+body strong.resolve {
+  color: #00FF00;
+}
+body footer {
+  font-size: 8px;
+  text-align: center;
+  color: gray;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  body footer {
+    font-size: 6px;
+  }
+}
+body footer a {
+  text-decoration: none;
+  color: gray;
+}
+body footer p {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
