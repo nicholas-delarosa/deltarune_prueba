@@ -7,6 +7,7 @@
   font-family: "UT/DR Text";
   src: url(../fonts/text_font_utdr.ttf);
 }
+/*Aunque se llame así, puede ser usado en vista desktop*/
 body {
   background-color: black;
   font-family: "UT/DR Text";
@@ -14,9 +15,35 @@ body {
   color: white;
 }
 
+html {
+  scroll-timeline: --page-scroll block;
+}
+
+@keyframes grow-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+#progress {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6px;
+  background: darkblue;
+  transform-origin: 0 50%;
+  animation: grow-progress auto linear;
+  animation-timeline: --page-scroll;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* sc = Screens */
 /* sc = Screens */
-/*Aunque se llame así, puede ser usado en vista desktop*/
 /*m = mixins*/
 .piano {
   display: flex;

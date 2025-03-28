@@ -1,6 +1,10 @@
+@use 'mixins' as m;
+
 body {
     background-color: black;
     font-family: "UT/DR Text";
     font-size: 14px;
     color: white;
 }
+
+@include m.read-bar;
