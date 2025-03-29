@@ -1,4 +1,5 @@
 @use 'mixins' as m;
+@use 'screens' as sc;
 
 body {
     background-color: black;
@@ -7,4 +8,11 @@ body {
     color: white;
 }
 
+div.menu-mobile {
+    @include sc.large-screens {
+        display: none;
+    }
+}
+
+@include m.burger;
 @include m.read-bar;
