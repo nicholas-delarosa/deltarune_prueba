@@ -16,6 +16,9 @@ body {
             @include sc.small-screens {
                 @include m.special-imgs;
             }
+            @include sc.large-screens {
+                display: none
+            }
         }
     }
     video {
@@ -26,7 +29,20 @@ body {
     }
 }
 
+img.nav_logo_desktop {
+    display: flex;
+    justify-self: center;
+    width: 300px;
+    height: auto;
+}
+
 img.dog {
+    @include sc.large-screens {
+        @include m.tada-imgs-desktop;
+        }
+    @include sc.small-screens {
+        @include m.tada-imgs-mobile;
+    }
     @include m.center-block;
     @include m.center-mobile;
 }

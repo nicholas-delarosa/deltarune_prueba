@@ -21,6 +21,12 @@ body {
   }
 }
 
+@media (min-width: 320px) and (max-width: 768px) {
+  div.menu-desktop, div.blank {
+    display: none;
+  }
+}
+
 .hamburger {
   position: fixed;
   background-color: transparent;
@@ -162,6 +168,96 @@ body {
   padding-left: 40px;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 99%;
+  z-index: 1000;
+  border: solid;
+  border-radius: 10px;
+  border-width: 6px;
+  box-sizing: border-box;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: yellow;
+}
+
+.nav-links a:hover .menu-img {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-30px) translateY(-10px);
+  justify-self: center;
+}
+
+/* ---- Estilos de la barra de búsqueda ---- */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  gap: 5px;
+}
+
+.search-box input {
+  border: none;
+  padding: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+}
+
+/* Espaciado para evitar que el contenido se oculte debajo del menú fijo */
+body {
+  padding-top: 70px;
+}
+
+/* Estilo para resaltar texto encontrado */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
 html {
   scroll-timeline: --page-scroll block;
 }
@@ -220,6 +316,11 @@ body header img {
     height: auto;
   }
 }
+@media (min-width: 1024px) {
+  body header img {
+    display: none;
+  }
+}
 body video {
   /* Create View Timeline */
   view-timeline-name: --revealing-image;
@@ -247,6 +348,13 @@ body video {
   }
 }
 
+img.nav_logo_desktop {
+  display: flex;
+  justify-self: center;
+  width: 300px;
+  height: auto;
+}
+
 img.dog {
   text-align: center;
   display: block;
@@ -254,6 +362,39 @@ img.dog {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  @keyframes tada {
+    0% {
+      transform: scale(1);
+    }
+    10%, 20% {
+      transform: scale(0.9) rotate(-3deg);
+    }
+    30%, 50%, 70%, 90% {
+      transform: scale(1.1) rotate(3deg);
+    }
+    40%, 60%, 80% {
+      transform: scale(1.1) rotate(-3deg);
+    }
+    100% {
+      transform: scale(1) rotate(0);
+    }
+  }
+  img.dog .dog:hover {
+    animation: tada 1s;
+  }
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  img.dog .dog {
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  img.dog .dog.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 img.fun_gang {

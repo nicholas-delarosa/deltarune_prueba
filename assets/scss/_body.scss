@@ -13,6 +13,12 @@ div.menu-mobile {
         display: none;
     }
 }
+div.menu-desktop, div.blank {
+    @include sc.small-screens {
+        display: none;
+    }
+}
 
 @include m.burger;
+@include m.menu;
 @include m.read-bar;

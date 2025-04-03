@@ -1,3 +1,5 @@
+@use 'screens' as sc;
+
 @mixin center-flex {
     display: flex;
     text-align: center;
@@ -41,6 +43,33 @@
             clip-path: inset(0% 0% 0% 0%);
         }
     }
+}
+
+@mixin tada-imgs-desktop {
+    @keyframes tada {
+        0% { transform: scale(1); }
+        10%, 20% { transform: scale(0.9) rotate(-3deg); }
+        30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+        40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+        100% { transform: scale(1) rotate(0); }
+    }
+    .dog:hover {
+        animation: tada 1s;
+    }
+}
+
+@mixin tada-imgs-mobile {
+    .dog {
+        transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    
+    .dog.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
 }
 
 @mixin rev-imgs {
@@ -204,4 +233,95 @@
     color: yellow;
     padding-left: 40px;
 }
+}
+
+@mixin menu {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        padding: 15px 30px;
+        position: fixed;
+        top: 0;
+        width: 99%;
+        z-index: 1000;
+        border: solid;
+        border-radius: 10px;
+        border-width: 6px;
+        box-sizing: border-box;
+    }
+
+    .navbar .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links li {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: yellow;
+    }
+    .nav-links a:hover .menu-img {
+        display: flex;
+        opacity: 1;
+        transform: translateX(-30px) translateY(-10px);
+        justify-self: center;
+    }
+
+    /* ---- Estilos de la barra de búsqueda ---- */
+    .search-box {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .search-box input {
+        border: none;
+        padding: 5px;
+        outline: none;
+        font-size: 16px;
+    }
+
+    .search-box button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    /* Espaciado para evitar que el contenido se oculte debajo del menú fijo */
+    body {
+        padding-top: 70px;
+    }
+
+    /* Estilo para resaltar texto encontrado */
+    .highlight {
+        background-color: yellow;
+        font-weight: bold;
+    }
 }
