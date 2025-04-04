@@ -1,4 +1,4 @@
-// 🔹 Menú mobile (hamburguesa)
+// Menú mobile (hamburguesa)
 var menu = document.querySelector('.hamburger');
 var menuMobile = document.querySelector('.menuppal');
 
@@ -19,7 +19,7 @@ function toggleMenu(event) {
 // Evento de clic para abrir/cerrar menú
 menu.addEventListener('click', toggleMenu, false);
 
-// 🔹 Menú desktop - Búsqueda en la barra
+// Menú desktop - Búsqueda en la barra
 function buscar() {
     let query = document.getElementById("search").value.trim().toLowerCase();
 
@@ -63,7 +63,7 @@ function playSound(audio) {
     audio.play().catch(error => console.error("Error al reproducir sonido:", error));
 }
 
-// 🔹 Eventos para enlaces del menú (desktop y mobile)
+// Eventos para enlaces del menú (desktop y mobile)
 const navLinks = document.querySelectorAll(".nav-links a, .menuppal ul li a");
 navLinks.forEach(link => {
     link.addEventListener("mouseover", () => playSound(hoverSound));
@@ -111,20 +111,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Tada mobile
-document.addEventListener("DOMContentLoaded", () => {
-    const dogImage = document.querySelector(".dog");
+// Capítulos 3 y 4. No disponibles hasta NS2
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("a");
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                dogImage.classList.remove("visible"); 
-                setTimeout(() => {
-                    dogImage.classList.add("visible");
-                }, 50);
-            }
-        });
-    }, { threshold: 0.5 });
+    links.forEach(link => {
+        const href = link.getAttribute("href");
 
-    observer.observe(dogImage);
+        if (!href || href.trim() === "") {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                alert("Gracias por tu interés 😊 Este capítulo estará disponible el 5 de junio de 2025. ¡Te esperamos!");
+
+            });
+        }
+    });
 });
+

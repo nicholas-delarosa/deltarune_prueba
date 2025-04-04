@@ -40,9 +40,6 @@ img.dog {
     @include sc.large-screens {
         @include m.tada-imgs-desktop;
         }
-    @include sc.small-screens {
-        @include m.tada-imgs-mobile;
-    }
     @include m.center-block;
     @include m.center-mobile;
 }
