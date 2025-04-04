@@ -52,20 +52,30 @@ document.getElementById("search").addEventListener("keypress", function(event) {
 const basePath = window.location.pathname.includes("/pages/") ? "../assets/audio/" : "assets/audio/";
 const hoverSound = new Audio(basePath + "hover.mp3");
 const clickSound = new Audio(basePath + "click.mp3");
-const menuOpenSound = new Audio(basePath + "menu-open.mp3");
-const menuCloseSound = new Audio(basePath + "menu-close.mp3");
 // Función para reproducir sonido de manera segura
 function playSound(audio) {
     audio.currentTime = 0;
     audio.play().catch(error => console.error("Error al reproducir sonido:", error));
 }
-// Seleccionar todos los botones (li) dentro de la lista .localizaciones
-const botones = document.querySelectorAll(".localizaciones li");
-// Agregar eventos de sonido a cada botón
-botones.forEach(boton => {
-    boton.addEventListener("mouseenter", () => playSound(hoverSound)); // Sonido al pasar el mouse
-    boton.addEventListener("click", () => playSound(clickSound)); // Sonido al hacer click
+// Botones en lista de localizaciones
+const localizaciones = document.querySelectorAll(".localizaciones li");
+localizaciones.forEach(boton => {
+    boton.addEventListener("mouseenter", () => playSound(hoverSound));
+    boton.addEventListener("click", () => playSound(clickSound));
 });
+// Botón de scroll-up
+const scrollUpBtn = document.querySelector(".scroll-up-btn");
+if (scrollUpBtn) {
+    scrollUpBtn.addEventListener("mouseenter", () => playSound(hoverSound));
+    scrollUpBtn.addEventListener("click", () => playSound(clickSound));
+}
+// Enlaces en la lista de capítulos
+const capitulos = document.querySelectorAll(".cap_lista li a");
+capitulos.forEach(cap => {
+    cap.addEventListener("mouseenter", () => playSound(hoverSound));
+    cap.addEventListener("click", () => playSound(clickSound));
+});
+
 
 
 // Eventos para enlaces del menú (desktop y mobile)
