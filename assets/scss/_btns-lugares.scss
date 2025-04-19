@@ -1,0 +1,123 @@
+@use 'screens' as sc;
+
+.localizaciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.localizaciones li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 10px 16px;
+    border: 1px solid white;
+    border-radius: 8px;
+    border-width: 2px;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+    width: auto;
+    white-space: nowrap;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform;
+}
+.localizaciones a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.localizaciones li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+}
+
+.localizaciones li:hover::before {
+    animation: shine 0.8s forwards;
+}
+
+.localizaciones li:hover {
+    border-color: yellow;
+    background-color: #2a2a2a;
+}
+.localizaciones li.hovered {
+    transform: perspective(1000px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
+.localizaciones img {
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    filter: brightness(1.2);
+}
+
+.localizaciones a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 22px;
+    z-index: 1;
+}
+@include sc.large-screens {
+    .localizaciones {
+        justify-content: center;
+        gap: 20px;
+    }
+    .localizaciones li {
+        flex: 1 1 calc(33.33% - 18px); /* 3 botones por fila */
+        max-width: 280px;
+    }
+    .localizaciones img {
+        width: 60px;
+    }
+    .localizaciones a {
+        font-size: 20px;
+    }
+}
+
+@include sc.small-screens {
+    .localizaciones {
+        flex-direction: column;
+        align-items: center;
+    }
+    .localizaciones li {
+        width: 80%; /* Ocupan casi toda la pantalla */
+        justify-content: center;
+    }
+    .localizaciones img {
+        width: 50px;
+    }
+    .localizaciones a {
+        font-size: 18px;
+    }
+}

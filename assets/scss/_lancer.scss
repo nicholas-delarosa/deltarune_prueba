@@ -1,0 +1,20 @@
+.lancer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 10px;
+    left: 25px;
+}
+
+.counter {
+    transform: translateY(8px);
+    font-size: 24px;
+    display: none;
+}
+.lancer img {
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}

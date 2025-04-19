@@ -1,11 +1,18 @@
 @use 'mixins' as m;
 @use 'screens' as sc;
+@use 'read-bar';
+@use 'nav-bars' as nvs;
+@use 'scroll-up-btn';
+@use 'btns-lugares';
+@use 'btns-capitulos';
+@use 'btns-logos';
+@use 'lancer';
 
 body {
     background-color: black;
+    color: white;
     font-family: "UT/DR Text";
     font-size: 14px;
-    color: white;
 }
 
 div.menu-mobile {
@@ -19,10 +26,5 @@ div.menu-desktop, div.blank {
     }
 }
 
-
-@include m.burger;
-@include m.menu;
-@include m.read-bar;
-@include m.scroll-btn;
-@include m.lugares;
-@include m.capitulos;
+@include nvs.burger;
+@include nvs.menu;

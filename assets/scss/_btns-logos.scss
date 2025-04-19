@@ -1,0 +1,177 @@
+/*div.logos {
+    @include sc.small-screens {
+        @include m.center-block;
+    }
+    @include sc.large-screens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+div.logos img {
+    @include sc.small-screens {
+        max-width: 50%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+div.logos img.ps4_logo {
+    @include sc.small-screens {
+        max-width: 100%;
+    }
+    @include sc.large-screens {
+        margin-left: 20px;
+    }
+}*/
+@use 'screens' as sc;
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+.logos li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    list-style: none;
+    padding: 10px 16px;
+    border: 1px solid white;
+    border-radius: 8px;
+    border-width: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+    width: auto;
+    white-space: nowrap;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform;
+}
+.logos a {
+    display: flex;
+    align-items: center;
+}
+.logos li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+}
+
+.logos li:hover::before {
+    animation: shine 0.8s forwards;
+}
+
+.logos li:hover {
+    border-color: yellow;
+}
+.logos li.hovered {
+    transform: perspective(1000px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
+.logos img {
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    filter: brightness(1.2);
+    place-content: center;
+}
+li.steam_logo {
+    background: linear-gradient(to bottom, black 35%, darkblue);
+}
+li.ns_logos {
+    background-color: #E60012;
+}
+li.ps_logos {
+    background: linear-gradient(to bottom, #1355E1, darkblue);
+}
+
+@include sc.large-screens {
+    .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .logos li {
+        flex: 1 1 calc(40% - 20px);
+        max-width: 280px;
+        box-sizing: border-box;
+    }
+
+    // Asegura que los dos últimos se acomoden bien juntos
+    //Intenté acomodar los logos de los PS para vista en 4K, desafortunadamente no lo conseguí. +10 horas gastadas en intentar arreglar esto
+    .logos li.ps_logos {
+        flex-wrap: wrap;
+        max-width: calc(40% - 12px);
+        height: auto;
+    }
+
+    .logos img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+@include sc.small-screens {
+    .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .logos li {
+        flex: 1 1 30%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    // Últimos dos li.ps_logos juntos
+    .logos li.ps_logos {
+        flex: 1 1 calc(50% - 12px);
+        max-width: calc(50% - 12px);
+    }
+
+    .logos img {
+        width: 100%;
+        max-width: 80px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+

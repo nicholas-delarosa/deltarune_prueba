@@ -45,7 +45,10 @@ img.dog {
 }
 
 img.fun_gang {
-    @include m.center-flex;
+    @include sc.large-screens {
+        @include m.tada-imgs-desktop;
+    }
+    @include m.center-block;
     @include sc.small-screens {
         @include m.special-imgs;
     }
@@ -73,32 +76,12 @@ div.img_mundo_oscuro, div.img_field, div.img_forest, div.img_castillo, div.img_j
     }
 }
 
-div.logos {
-    @include sc.small-screens {
-        @include m.center-block;
-    }
-    @include sc.large-screens {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+div.starwalker {
+    position: absolute;
+    bottom: 1;
+    left: 0;
+    img {
+        width: 20px;
+        height: 20px;
     }
 }
-
-div.logos img {
-    @include sc.small-screens {
-        max-width: 50%;
-        margin: 0 auto;
-        height: auto;
-    }
-}
-
-div.logos img.ps4_logo {
-    @include sc.small-screens {
-        max-width: 100%;
-    }
-    @include sc.large-screens {
-        margin-left: 20px;
-    }
-}
-

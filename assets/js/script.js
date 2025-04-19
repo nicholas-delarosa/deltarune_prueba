@@ -6,7 +6,6 @@ function toggleMenu(event) {
     event.preventDefault();
     this.classList.toggle('is-active');
     menuMobile.classList.toggle('is_active');
-
     if (menuMobile.classList.contains("is_active")) {
         playSound(menuOpenSound);
     } else {
@@ -52,6 +51,8 @@ document.getElementById("search").addEventListener("keypress", function(event) {
 const basePath = window.location.pathname.includes("/pages/") ? "../assets/audio/" : "assets/audio/";
 const hoverSound = new Audio(basePath + "hover.mp3");
 const clickSound = new Audio(basePath + "click.mp3");
+const menuOpenSound = new Audio(basePath + "menu-open.mp3");
+const menuCloseSound = new Audio(basePath + "menu-close.mp3");
 // Función para reproducir sonido de manera segura
 function playSound(audio) {
     audio.currentTime = 0;
@@ -75,6 +76,12 @@ capitulos.forEach(cap => {
     cap.addEventListener("mouseenter", () => playSound(hoverSound));
     cap.addEventListener("click", () => playSound(clickSound));
 });
+// Enlaces en la lista de los logos
+const logos = document.querySelectorAll(".logos li");
+logos.forEach(boton => {
+    boton.addEventListener("mouseenter", () => playSound(hoverSound));
+    boton.addEventListener("click", () => playSound(clickSound));
+})
 
 
 
@@ -111,20 +118,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Tada desktop
+// Tada en cualquier imagen con clase específica (ej. animatable)
 document.addEventListener("DOMContentLoaded", function () {
-    const dogImg = document.querySelector(".dog");
+    const animatedImgs = document.querySelectorAll(".animatable");
 
-    dogImg.addEventListener("mouseenter", function () {
-        // Agrega las clases para iniciar la animación "tada"
-        dogImg.classList.add("animate__animated", "animate__tada");
-    });
+    animatedImgs.forEach(function (img) {
+        img.addEventListener("mouseenter", function () {
+            img.classList.add("animate__animated", "animate__tada");
+        });
 
-    dogImg.addEventListener("animationend", function () {
-        // Remueve las clases para permitir que la animación se vuelva a disparar en futuros hovers
-        dogImg.classList.remove("animate__animated", "animate__tada");
+        img.addEventListener("animationend", function () {
+            img.classList.remove("animate__animated", "animate__tada");
+        });
     });
 });
+
 
 // Capítulos 3 y 4. No disponibles hasta NS2
 document.addEventListener("DOMContentLoaded", function () {
@@ -137,7 +145,18 @@ document.addEventListener("DOMContentLoaded", function () {
             link.addEventListener("click", function (event) {
                 event.preventDefault();
                 alert("Gracias por tu interés 😊 Este capítulo estará disponible el 5 de junio de 2025. ¡Te esperamos!");
-
+            });
+        }
+        else if (!href || href.trim() === "no-link") {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                alert("Gracias por tu interés para jugar en esta plataforma 😊 Desafortunadamente aún no se encuentra disponible, pero puedes esperar hasta el 5 de junio de 2025 para poder disfrutar de este capítulo en esta plataforma. ¡Te esperamos!");
+            });
+        }
+        else if (!href || href.trim() === "no-cap") {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                alert("☠︎□︎ ⧫︎♓︎♏︎■︎♏︎ ♋︎♍︎♍︎♏︎⬧︎□︎ ♋︎ ♏︎⬧︎⧫︎♏︎ ♍︎□︎■︎⧫︎♏︎■︎♓︎♎︎□︎📪︎ ⬧︎♓︎ ♎︎♏︎⬧︎♏︎♋︎ ♋︎♍︎♍︎♏︎♎︎♏︎❒︎ ♋︎ ♏︎⬧︎⧫︎♏︎ ❍︎♓︎⬧︎❍︎□︎ ◻︎□︎❒︎ ♐︎♋︎❖︎□︎❒︎ ♍︎□︎❍︎◆︎■︎◻︎❑︎◆︎♏︎⬧︎♏︎ ♍︎□︎■︎ ♏︎●︎ ♎︎□︎♍︎⧫︎□︎❒︎ ☝︎");
             });
         }
     });
@@ -180,4 +199,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aplica el efecto tanto a cap_lista como a localizaciones
     apply3DEffect('.cap_lista');
     apply3DEffect('.localizaciones');
-});  
+    apply3DEffect('.logos');
+});
+
+// Lancer
+document.addEventListener('DOMContentLoaded', () => {
+    const image = document.getElementById('clickableImage');
+    const counterEl = document.getElementById('counter');
+    const audio = document.getElementById('sound');
+
+    // Detectar si estamos en una subcarpeta como /pages
+    const isInSubfolder = window.location.pathname.includes('/pages/');
+
+    // Rutas relativas correctas
+    const staticImg = isInSubfolder ? '../assets/img/lancer-spin.png' : 'assets/img/lancer-spin.png';
+    const gifImg = isInSubfolder ? '../assets/img/lancer-spin.gif' : 'assets/img/lancer-spin.gif';
+    const audioSrc = isInSubfolder ? '../assets/audio/lancer-spin.mp3' : 'assets/audio/lancer-spin.mp3';
+
+    // Asignar audio
+    audio.src = audioSrc;
+
+    // Obtener el contador desde localStorage
+    let counter = parseInt(localStorage.getItem('clickCounter')) || 0;
+
+    // Ocultar contador si aún no hay clics
+    if (counter > 0) {
+    counterEl.style.display = 'block';
+    counterEl.textContent = counter;
+    }
+
+    let isPlaying = false;
+
+    image.addEventListener('click', () => {
+    if (isPlaying) return;
+
+    isPlaying = true;
+    image.src = gifImg;
+    audio.currentTime = 0;
+    audio.play();
+
+    audio.addEventListener('ended', () => {
+        image.src = staticImg;
+
+        counter++;
+        localStorage.setItem('clickCounter', counter);
+
+        counterEl.textContent = counter;
+        counterEl.style.display = 'block'; // Mostrar solo después del primer clic
+        isPlaying = false;
+    }, { once: true });
+    });
+});
+
