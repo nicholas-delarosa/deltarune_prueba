@@ -1043,6 +1043,8 @@ body footer {
 @media (min-width: 320px) and (max-width: 1023px) {
   body footer {
     font-size: 6px;
+    width: fit-content;
+    max-width: 350px;
   }
 }
 body footer a {

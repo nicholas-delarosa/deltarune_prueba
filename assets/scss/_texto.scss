@@ -68,6 +68,8 @@ body {
         width: 450px;
         @include sc.small-screens {
             font-size: 6px;
+            width: fit-content;
+            max-width: 350px;
         }
         a {
             text-decoration: none;
